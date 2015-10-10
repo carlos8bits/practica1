@@ -33,6 +33,7 @@ public class principal extends javax.swing.JFrame {
         initComponents();
         lblNoGrafica1.setText("0");
         lblNoGrafica2.setText("0");
+        txtDeleteNodo.setText("");
     }
 
     /**
@@ -185,6 +186,11 @@ public class principal extends javax.swing.JFrame {
         jLabel1.setText("Hilera :");
 
         eliminarNodo.setText("Eliminar nodo");
+        eliminarNodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarNodoActionPerformed(evt);
+            }
+        });
 
         ordenInverso.setText("Orden inverso");
         ordenInverso.addActionListener(new java.awt.event.ActionListener() {
@@ -360,6 +366,16 @@ public class principal extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_ingresarActionPerformed
+
+    private void eliminarNodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarNodoActionPerformed
+     
+     txtGrafica2.setText("");
+     nodoSimple x = lst2.buscarDato(txtDeleteNodo.getText());
+     lst2.borrar(x);
+     Dibujar(lst2,txtGrafica2,lblNoGrafica2);
+         
+    
+    }//GEN-LAST:event_eliminarNodoActionPerformed
 
     /**
      * @param args the command line arguments

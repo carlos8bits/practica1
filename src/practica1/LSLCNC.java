@@ -1,6 +1,7 @@
 package practica1;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 public class LSLCNC {
@@ -23,7 +24,7 @@ public class LSLCNC {
     }
     nodoSimple anterior(nodoSimple x){
         nodoSimple p;
-        p = primerNodo();
+        p = primero;
         if(x==primero){
             return null;
         }
@@ -32,6 +33,7 @@ public class LSLCNC {
                 if(p.retornaLiga()==x){
                 return p;
                 }
+                p=p.retornaLiga();
             }
         }
        return null;
@@ -80,36 +82,62 @@ public class LSLCNC {
              primero = x;
         }      
     }
-    nodoSimple buscarDato(String d,nodoSimple y){
-        nodoSimple x;
-        x = primerNodo();
-        y = anterior(x);
+    nodoSimple buscarDato(String d){
+        nodoSimple x = primerNodo();
+        nodoSimple y = anterior(x);
         
-        while(finDeRecorrido(x)==false&&x.retornaPermutacion()!=d){
+        while(this.finDeRecorrido(x)==false){
+            if(x.retornaPermutacion().equals(d)){
+                return x;
+            }
             y = x;
             x = x.retornaLiga();
         }
-        return x;
+        
+        JOptionPane.showMessageDialog(null, "no se encontro el dato");
+        return null;
+        
     }
     
-    void borrar(nodoSimple x, nodoSimple y){
+    void borrar(nodoSimple x){
+        x = this.buscarDato(x.retornaPermutacion());
         if(x==null){
             System.out.println("no existe");
         }
-        desconectar(x,y);
+        desconectar(x);
     }
-    void desconectar(nodoSimple x, nodoSimple y){
+    void desconectar(nodoSimple x){
+       
+        
+        
+        nodoSimple y = this.anterior(x);
+        
         if(x!=primero){
             y.asignaLiga(x.retornaLiga());
             if(x==ultimo){
                 ultimo = y;
             }
         }
-        else{
+               
+        
             primero = primero.retornaLiga();
             if(primero==null){
-                ultimo = null;
+                ultimo=null;
             }
+        
+    }
+    
+    String imprimir(){
+        
+        nodoSimple p = primero;
+        String st = "";
+        
+        while(this.finDeRecorrido(p)==false){
+            
+            st = st + p.retornaPermutacion() + "\n ";
+            p = p.retornaLiga();
         }
+        
+        return st;
     }
 }
