@@ -6,12 +6,11 @@ public class LSLCNC {
     public nodoSimple primero,ultimo;
     
     public LSLCNC(){
-        primero=ultimo=null;
+        primero = new nodoSimple();
+        primero.asignaLiga(primero);
+        ultimo=primero;
     }
-    public LSLCNC(nodoSimple p,nodoSimple u){
-        primero = p;
-        ultimo = u;
-    }
+ 
     public boolean esVacia(){
         return primero==null;
     }

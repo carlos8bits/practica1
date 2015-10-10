@@ -6,6 +6,13 @@ public class nodoSimple {
     private nodoSimple liga;
     private String per;
 
+    nodoSimple()
+    {
+        liga=null;
+        per=null;
+    }
+
+
     nodoSimple(nodoSimple l,String p){
         liga = l;
         per = p;
