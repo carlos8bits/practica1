@@ -94,22 +94,20 @@ public class LSLCNC {
             x = x.retornaLiga();
         }
         
-        JOptionPane.showMessageDialog(null, "no se encontro el dato");
+        JOptionPane.showMessageDialog(null, "no se encontro el nodo");
         return null;
         
     }
     
     void borrar(nodoSimple x){
         x = this.buscarDato(x.retornaPermutacion());
-        if(x==null){
-            System.out.println("no existe");
+        if(x!=null){
+            desconectar(x);
         }
-        desconectar(x);
+     
     }
     void desconectar(nodoSimple x){
-       
-        
-        
+      
         nodoSimple y = this.anterior(x);
         
         if(x!=primero){
@@ -127,17 +125,17 @@ public class LSLCNC {
         
     }
     
-    String imprimir(){
-        
-        nodoSimple p = primero;
-        String st = "";
-        
-        while(this.finDeRecorrido(p)==false){
-            
-            st = st + p.retornaPermutacion() + "\n ";
-            p = p.retornaLiga();
-        }
-        
-        return st;
-    }
+//    String imprimir(){
+//        
+//        nodoSimple p = primero;
+//        String st = "";
+//        
+//        while(this.finDeRecorrido(p)==false){
+//            
+//            st = st + p.retornaPermutacion() + "\n ";
+//            p = p.retornaLiga();
+//        }
+//        
+//        return st;
+//    }
 }
