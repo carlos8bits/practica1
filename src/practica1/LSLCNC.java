@@ -1,14 +1,15 @@
 package practica1;
 
+import java.util.ArrayList;
+
 
 public class LSLCNC {
     
     public nodoSimple primero,ultimo;
     
     public LSLCNC(){
-        primero = new nodoSimple();
-        primero.asignaLiga(primero);
-        ultimo=primero;
+        primero =ultimo=null;
+   
     }
  
     public boolean esVacia(){
@@ -52,6 +53,17 @@ public class LSLCNC {
         x = new nodoSimple(null,d);
         conectar(x,y);
     }
+    
+    public void InsertarLista(ArrayList<String> lstPermutaciones)
+    {
+        nodoSimple p = primero;
+        for (String obj : lstPermutaciones) {
+            insertar(obj, p);
+            p=ultimo;
+        }
+    
+    }
+    
     void conectar(nodoSimple x, nodoSimple y){
         if(y!=null){
             x.asignaLiga(y.retornaLiga());
