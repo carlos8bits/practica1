@@ -27,6 +27,9 @@ public class Permutar {
         total = getFactorial(n);
         reset();
     }
+    
+    public void hola ()
+    {}
 
     public ArrayList<String> Permutacion(String hilera) {
         ArrayList<String> result = new ArrayList<String>();
