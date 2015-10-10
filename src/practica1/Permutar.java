@@ -119,19 +119,5 @@ public class Permutar {
         return a;
     }
 }
-//public static void main(String[] args) {
-//int[] indices;
-//String[] elements = { "a", "b", "c", "d" };
-//permutaciones x = new permutaciones(elements.length);
-//StringBuffer permutation;
-//while (x.hasMore()) {
-//permutation = new StringBuffer();
-//indices = x.getNext();
-//for (int i = 0; i < indices.length; i++) {
-//permutation.append(elements[indices[i]]);
-//}
-//System.out.println(permutation.toString());
-//}
-//
-//}
+
 
