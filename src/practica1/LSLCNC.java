@@ -124,18 +124,42 @@ public class LSLCNC {
             }
         
     }
-    
-//    String imprimir(){
-//        
-//        nodoSimple p = primero;
-//        String st = "";
-//        
-//        while(this.finDeRecorrido(p)==false){
-//            
-//            st = st + p.retornaPermutacion() + "\n ";
-//            p = p.retornaLiga();
-//        }
-//        
-//        return st;
-//    }
+    /*
+    String imprimir(){
+      
+        nodoSimple p = primero;
+        String st = "";
+        
+        while(this.finDeRecorrido(p)==false){
+            
+            st = st + p.retornaPermutacion() + "\n ";
+            p = p.retornaLiga();
+        }
+        
+        return st;
+    }
+    */
+    void ordenInverso(){
+        nodoSimple p = primero;
+        nodoSimple y = this.anterior(p);
+        ultimo = primero;
+        while(finDeRecorrido(p)==false){
+            nodoSimple aux = p.retornaLiga();
+            p.asignaLiga(y);
+            primero = p;
+            y = p;
+            p = aux;
+            
+        }
+        
+        
+    }
 }
+
+
+
+
+
+
+
+

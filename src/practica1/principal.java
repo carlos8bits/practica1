@@ -335,7 +335,10 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarPermutacionesRepetidasActionPerformed
 
     private void ordenInversoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenInversoActionPerformed
-        // TODO add your handling code here:
+        txtGrafica2.setText(" ORDEN INVERSO : \n \n" );
+        lst2.ordenInverso();
+        Dibujar(lst2, txtGrafica2, lblNoGrafica2,objHileraIngresada);
+        
     }//GEN-LAST:event_ordenInversoActionPerformed
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
