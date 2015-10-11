@@ -8,6 +8,7 @@ package practica1;
 import java.awt.List;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -27,9 +28,11 @@ public class Permutar {
         total = getFactorial(n);
         reset();
     }
-    
-    public void hola ()
+    public Permutar()
     {}
+
+    public void hola() {
+    }
 
     public ArrayList<String> Permutacion(String hilera) {
         ArrayList<String> result = new ArrayList<String>();
@@ -47,7 +50,20 @@ public class Permutar {
         return result;
     }
 
-    
+    public String RamdonHilera(int n, String objHilera) {
+        char[] cHilera = new char[objHilera.length()];
+        StringBuffer random = new StringBuffer();
+        cHilera = objHilera.toCharArray();
+        Random rand = new Random();
+        for (int i = 0; i < n; i++) {
+             
+            int randomNum = rand.nextInt(n + 1) ;
+            random.append(cHilera[randomNum]);
+            
+        }
+        return random.toString();
+
+    }
 
     public void reset() {
         for (int i = 0; i < a.length; i++) {
@@ -119,5 +135,3 @@ public class Permutar {
         return a;
     }
 }
-
-
