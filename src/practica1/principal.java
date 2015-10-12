@@ -48,6 +48,7 @@ public class principal extends javax.swing.JFrame {
         int cont = 0;
         long count = 0;
         nodoSimple p = lst.primerNodo();
+        objTxt.setText("");
         if (hileraingresada.length()>0) {
             objTxt.append("LA HILERA INGRESADA ES : \"" + hileraingresada + "\"");
             objTxt.append("\n");
@@ -195,6 +196,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         ordenarAlfabeticamente.setText("Ordenar");
+        ordenarAlfabeticamente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordenarAlfabeticamenteActionPerformed(evt);
+            }
+        });
 
         eliminarPermutacionesRepetidas.setText("Eliminar Repetidas");
         eliminarPermutacionesRepetidas.addActionListener(new java.awt.event.ActionListener() {
@@ -338,7 +344,7 @@ public class principal extends javax.swing.JFrame {
         txtGrafica2.setText(" ORDEN INVERSO : \n \n" );
         lst2.ordenInverso();
         Dibujar(lst2, txtGrafica2, lblNoGrafica2,objHileraIngresada);
-        
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_ordenInversoActionPerformed
 
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
@@ -376,6 +382,7 @@ public class principal extends javax.swing.JFrame {
             lst2.borrar(x);
             Dibujar(lst2, txtGrafica2, lblNoGrafica2,objHileraIngresada);
         }
+        jTabbedPane1.setSelectedIndex(1);
 
 
     }//GEN-LAST:event_eliminarNodoActionPerformed
@@ -407,6 +414,19 @@ public class principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_generarHileraAleatoriaActionPerformed
+
+    private void ordenarAlfabeticamenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenarAlfabeticamenteActionPerformed
+      
+//        nodoSimple p = lst2.ultimoNodo();
+//        p=lst2.anterior(p);
+//        nodoSimple x = lst2.anterior(p);
+//        x=lst2.anterior(x);
+//        lst2.Intercambiar(x, p);
+        lst2.OrdenAlfabetico();
+        Dibujar(lst2, txtGrafica2, lblNoGrafica2, objHileraIngresada);
+        jTabbedPane1.setSelectedIndex(1);
+        
+    }//GEN-LAST:event_ordenarAlfabeticamenteActionPerformed
 
     /**
      * @param args the command line arguments
