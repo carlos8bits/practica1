@@ -48,7 +48,7 @@ public class principal extends javax.swing.JFrame {
         int cont = 0;
         long count = 0;
         nodoSimple p = lst.primerNodo();
-        objTxt.setText("");
+        //objTxt.setText("");
         if (hileraingresada.length()>0) {
             objTxt.append("LA HILERA INGRESADA ES : \"" + hileraingresada + "\"");
             objTxt.append("\n");
@@ -337,7 +337,26 @@ public class principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void eliminarPermutacionesRepetidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarPermutacionesRepetidasActionPerformed
-        // TODO add your handling code here:
+       
+        txtGrafica2.setText(" ELIMINAR REPETIDAS : \n \n" );
+        
+        nodoSimple p  = lst2.primero;
+        
+        while(lst2.finDeRecorrido(p)==false){
+            nodoSimple y = p.retornaLiga();
+            while(lst2.finDeRecorrido(y)==false){
+                nodoSimple aux = y.retornaLiga();
+                if(p.retornaPermutacion().equals(y.retornaPermutacion())){
+                    lst2.desconectar(y);
+                }
+                y=aux;
+            }
+            p=p.retornaLiga();
+        }
+        
+        Dibujar(lst2, txtGrafica2, lblNoGrafica2,objHileraIngresada);
+        
+        
     }//GEN-LAST:event_eliminarPermutacionesRepetidasActionPerformed
 
     private void ordenInversoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenInversoActionPerformed
@@ -380,6 +399,7 @@ public class principal extends javax.swing.JFrame {
         if (x != null) {
             txtGrafica2.setText("");
             lst2.borrar(x);
+            txtGrafica2.setText(" ELIMINAR NODO : \n \n" );
             Dibujar(lst2, txtGrafica2, lblNoGrafica2,objHileraIngresada);
         }
         jTabbedPane1.setSelectedIndex(1);
