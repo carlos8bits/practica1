@@ -31,8 +31,7 @@ public class Permutar {
     public Permutar()
     {}
 
-    public void hola() {
-    }
+  
 
     public ArrayList<String> Permutacion(String hilera) {
         ArrayList<String> result = new ArrayList<String>();
@@ -84,7 +83,7 @@ public class Permutar {
         return numLeft.compareTo(BigInteger.ZERO) == 1;
     }
 
-    private static BigInteger getFactorial(int n) {
+    public static BigInteger getFactorial(int n) {
         BigInteger fact = BigInteger.ONE;
         for (int i = n; i > 1; i--) {
             fact = fact.multiply(new BigInteger(Integer.toString(i)));
@@ -101,25 +100,25 @@ public class Permutar {
 
         int temp;
 
-// Find largest index j with a[j] < a[j+1]
+// Busca el mayor  j con  a[j] < a[j+1]
         int j = a.length - 2;
         while (a[j] > a[j + 1]) {
             j--;
         }
 
-// Find index k such that a[k] is smallest integer
-// greater than a[j] to the right of a[j]
+// Busca el indice k de manera que  a[k] es el menor 
+// mayor que  a[j] 
         int k = a.length - 1;
         while (a[j] > a[k]) {
             k--;
         }
 
-// Interchange a[j] and a[k]
+// intercambia a[j] y a[k]
         temp = a[k];
         a[k] = a[j];
         a[j] = temp;
 
-// Put tail end of permutation after jth position in increasing order
+// Coloca la permutacion despues de la posicion j 
         int r = a.length - 1;
         int s = j + 1;
 

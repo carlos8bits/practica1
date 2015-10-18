@@ -44,13 +44,7 @@ public class LSLCNC {
         return x == null;
     }
 
-    public void recorre() {
-        nodoSimple p;
-        p = primerNodo();
-        while (this.finDeRecorrido(p) == false) {
-            p = p.retornaLiga();
-        }
-    }
+
 
     public void insertar(String d, nodoSimple y) {
         nodoSimple x;
